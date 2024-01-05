@@ -1,3 +1,24 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import DynamicAttributes from '../components/DynamicAttributes.svelte';
+
+    const components = [
+        'dynamic attributes',
+    ] as const
+
+    let checkedComponent: string = 'dynamic attributes';
+</script>
+
+{#each components as component}
+    <label>
+        <input
+            type="radio"
+            bind:group={checkedComponent}
+            value={component}
+        />
+        {component}
+    </label>
+{/each}
+
+{#if checkedComponent === "dynamic attributes"}
+    <DynamicAttributes />
+{/if}
