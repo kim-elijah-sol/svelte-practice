@@ -1,8 +1,9 @@
 <script lang="ts">
     import DynamicAttributes from '../components/DynamicAttributes.svelte';
+    import Style from '../components/Style.svelte'
 
     const components = [
-        'dynamic attributes',
+        'dynamic attributes', 'style',
     ] as const
 
     let checkedComponent: string = 'dynamic attributes';
@@ -21,4 +22,8 @@
 
 {#if checkedComponent === "dynamic attributes"}
     <DynamicAttributes />
+{/if}
+    
+{#if checkedComponent === "style"}
+    <Style />
 {/if}
