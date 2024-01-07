@@ -1,9 +1,10 @@
 <script lang="ts">
     import DynamicAttributes from '../components/DynamicAttributes.svelte';
     import Style from '../components/Style.svelte'
+    import HtmlTag from '../components/HtmlTag.svelte'
 
     const components = [
-        'dynamic attributes', 'style',
+        'dynamic attributes', 'style', 'html tag',
     ] as const
 
     let checkedComponent: string = 'dynamic attributes';
@@ -26,4 +27,8 @@
     
 {#if checkedComponent === "style"}
     <Style />
+{/if}
+
+{#if checkedComponent === "html tag"}
+    <HtmlTag />
 {/if}
