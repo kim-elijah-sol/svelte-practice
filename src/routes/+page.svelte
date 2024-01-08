@@ -1,12 +1,14 @@
 <script lang="ts">
 	import ReactiveAssignments from './../components/ReactiveAssignments.svelte';
     import ReactiveDeclarations from './../components/ReactiveDeclarations.svelte';
+    import ReactiveStatements from './../components/ReactiveStatements.svelte';
     import DynamicAttributes from '../components/DynamicAttributes.svelte';
     import Style from '../components/Style.svelte'
     import HtmlTag from '../components/HtmlTag.svelte'
 
     const components = [
-        'dynamic attributes', 'style', 'html tag', 'reactive assignments', 'reactive declarations'
+        'dynamic attributes', 'style', 'html tag', 'reactive assignments', 'reactive declarations',
+        'reactive statements'
     ] as const
 
     let checkedComponent: string = 'dynamic attributes';
@@ -41,4 +43,8 @@
 
 {#if checkedComponent === "reactive declarations"}
     <ReactiveDeclarations />
+{/if}
+
+{#if checkedComponent === "reactive statements"}
+    <ReactiveStatements />
 {/if}
