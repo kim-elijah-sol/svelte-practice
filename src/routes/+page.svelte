@@ -1,10 +1,11 @@
 <script lang="ts">
+	import ReactiveAssignments from './../components/ReactiveAssignments.svelte';
     import DynamicAttributes from '../components/DynamicAttributes.svelte';
     import Style from '../components/Style.svelte'
     import HtmlTag from '../components/HtmlTag.svelte'
 
     const components = [
-        'dynamic attributes', 'style', 'html tag',
+        'dynamic attributes', 'style', 'html tag', 'reactive assignments'
     ] as const
 
     let checkedComponent: string = 'dynamic attributes';
@@ -31,4 +32,8 @@
 
 {#if checkedComponent === "html tag"}
     <HtmlTag />
+{/if}
+
+{#if checkedComponent === "reactive assignments"}
+    <ReactiveAssignments />
 {/if}
