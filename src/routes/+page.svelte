@@ -5,10 +5,11 @@
     import DynamicAttributes from '../components/DynamicAttributes.svelte';
     import Style from '../components/Style.svelte'
     import HtmlTag from '../components/HtmlTag.svelte'
+    import Props from '../components/Props.svelte'
 
     const components = [
         'dynamic attributes', 'style', 'html tag', 'reactive assignments', 'reactive declarations',
-        'reactive statements'
+        'reactive statements', 'props'
     ] as const
 
     let checkedComponent: string = 'dynamic attributes';
@@ -47,4 +48,9 @@
 
 {#if checkedComponent === "reactive statements"}
     <ReactiveStatements />
+{/if}
+
+<!-- react 와 같이 object literal 로 props 를 전달할 수 있다. -->
+{#if checkedComponent === "props"}
+    <Props {...{ age: 26, job: 'fe developer' }} />
 {/if}
