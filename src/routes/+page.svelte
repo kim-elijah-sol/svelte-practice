@@ -1,4 +1,5 @@
 <script lang="ts">
+	import IfBlock from './../components/IfBlock.svelte';
 	import ReactiveAssignments from './../components/ReactiveAssignments.svelte';
     import ReactiveDeclarations from './../components/ReactiveDeclarations.svelte';
     import ReactiveStatements from './../components/ReactiveStatements.svelte';
@@ -9,7 +10,7 @@
 
     const components = [
         'dynamic attributes', 'style', 'html tag', 'reactive assignments', 'reactive declarations',
-        'reactive statements', 'props'
+        'reactive statements', 'props', 'if block'
     ] as const
 
     let checkedComponent: string = 'dynamic attributes';
@@ -53,4 +54,8 @@
 <!-- react 와 같이 object literal 로 props 를 전달할 수 있다. -->
 {#if checkedComponent === "props"}
     <Props {...{ age: 26, job: 'fe developer' }} />
+{/if}
+
+{#if checkedComponent === "if block"}
+    <IfBlock />
 {/if}
