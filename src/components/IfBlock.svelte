@@ -13,6 +13,8 @@
 
     {#if count % 2 === 0}
         <p>짝수</p>
+    {:else if count % 3 === 0}
+        <p>3의 배수</p>
     {:else}
         <p>홀수</p>
     {/if}
