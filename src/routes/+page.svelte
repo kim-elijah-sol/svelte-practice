@@ -7,10 +7,11 @@
     import Style from '../components/Style.svelte'
     import HtmlTag from '../components/HtmlTag.svelte'
     import Props from '../components/Props.svelte'
+    import EachBlock from '../components/EachBlock.svelte'
 
     const components = [
         'dynamic attributes', 'style', 'html tag', 'reactive assignments', 'reactive declarations',
-        'reactive statements', 'props', 'if block'
+        'reactive statements', 'props', 'if block', 'each block'
     ] as const
 
     let checkedComponent: string = 'dynamic attributes';
@@ -58,4 +59,8 @@
 
 {#if checkedComponent === "if block"}
     <IfBlock />
+{/if}
+
+{#if checkedComponent === "each block"}
+    <EachBlock />
 {/if}
