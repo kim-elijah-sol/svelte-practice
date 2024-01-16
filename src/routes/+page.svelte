@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AwaitBlock from './../components/AwaitBlock.svelte';
 	import IfBlock from './../components/IfBlock.svelte';
 	import ReactiveAssignments from './../components/ReactiveAssignments.svelte';
     import ReactiveDeclarations from './../components/ReactiveDeclarations.svelte';
@@ -11,7 +12,7 @@
 
     const components = [
         'dynamic attributes', 'style', 'html tag', 'reactive assignments', 'reactive declarations',
-        'reactive statements', 'props', 'if block', 'each block'
+        'reactive statements', 'props', 'if block', 'each block', 'await block',
     ] as const
 
     let checkedComponent: string = 'dynamic attributes';
@@ -63,4 +64,8 @@
 
 {#if checkedComponent === "each block"}
     <EachBlock />
+{/if}
+
+{#if checkedComponent === "await block"}
+    <AwaitBlock />
 {/if}
