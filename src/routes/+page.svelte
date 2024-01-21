@@ -9,10 +9,11 @@
     import HtmlTag from '../components/HtmlTag.svelte'
     import Props from '../components/Props.svelte'
     import EachBlock from '../components/EachBlock.svelte'
+  import DomEvent from '../components/DomEvent.svelte';
 
     const components = [
         'dynamic attributes', 'style', 'html tag', 'reactive assignments', 'reactive declarations',
-        'reactive statements', 'props', 'if block', 'each block', 'await block',
+        'reactive statements', 'props', 'if block', 'each block', 'await block', 'dom event'
     ] as const
 
     let checkedComponent: string = 'dynamic attributes';
@@ -68,4 +69,8 @@
 
 {#if checkedComponent === "await block"}
     <AwaitBlock />
+{/if}
+
+{#if checkedComponent === 'dom event'}
+    <DomEvent />
 {/if}
